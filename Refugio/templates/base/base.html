@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>{% block tittle %} Base {% endblock %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	</head>
+	<body>
+		{% block header %} 
+		{% include 'base/header.html' %}
+		{% endblock %}
+
+		{% block content %} 
+		<h3>Este es el contenido Base</h3>
+		{% endblock %}
+
+		{% block footer %} 
+		<h4>Soy el foother Base</h4>
+		{% endblock %}
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</body>
+</html>
