@@ -5,22 +5,86 @@
 		<meta charset="utf-8">
 		<title>{% block tittle %} Base {% endblock %}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+		{% block style %} 
+		
+		{% endblock %}
+
 	</head>
 	<body>
-		{% block header %} 
-		{% include 'base/header.html' %}
-		{% endblock %}
+		<div class="container">
+			{% block navbar %} 
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+								<span class="sr-only">Menu</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
 
-		{% block content %} 
-		<h3>Este es el contenido Base</h3>
-		{% endblock %}
+							<a href="#" class="navbar-brand">Home</a>
+						</div>
+						<div class="collapse navbar-collapse" id="navbar-1">
+							<!--**********************-->
+							<!--******Mascota¨********-->
+							<!--**********************-->
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Mascotas<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Registrar</a></li>
+										<li><a href="#">Listar Mascota</a></li>
+									</ul>
+								</li>
+							</ul>
 
+							<!--**********************-->
+							<!--******Adopciones******-->
+							<!--**********************-->
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Adopciones<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Solicitar</a></li>
+										<li><a href="#">Listar Solicitudes</a></li>
+									</ul>
+								</li>
+							</ul>
+
+							<!--**********************-->
+							<!--*******Opciones*******-->
+							<!--**********************-->
+							<ul class="nav navbar-nav navbar-right">
+								<li class="dropdown">
+									<a href="http://www.maskota.com.mx/">MasKota</a>
+								</li>
+
+								<li class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Opciones<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Salir</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+				</div>
+			</nav>
+			{% endblock %}
+
+			{% block content %} 
+			<h3>Este es el contenido Base</h3>
+			{% endblock %}
+
+		</div>
 		{% block footer %} 
-		<h4>Soy el foother Base</h4>
 		{% endblock %}
 
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	</body>
 </html>
