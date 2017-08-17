@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %} 
+{% load staticfiles %}
+
+{% block tittle %} 
+	Mascota Eliminar
+{% endblock %}
+
+{% block style %} 
+	<link rel="stylesheet" href="{% static 'css/estilos_mascota_delete.css' %}">
+{% endblock %}
+
+{% block content %} 
+<form method='post'>
+	{% csrf_token %}
+	<h3>¿Desea eliminar el registro de {{ object.nombre }}?</h3>
+	<!-- {{ form.nombre }}-->
+	<button class="btn btn-danger" type="submit">Sí, eliminar</button>
+	<a class="btn btn-primary" href="{% url 'mascota:mascota_listar' %}">Cancelar</a>
+</form>	
+{% endblock %}
