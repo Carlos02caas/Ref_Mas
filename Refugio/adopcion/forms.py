@@ -1,6 +1,6 @@
 from django import forms
 
-from apps.adopcion.models import Persona, Solicitud
+from adopcion.models import Persona, Solicitud
 
 
 class PersonaForm(forms.ModelForm):
@@ -20,7 +20,7 @@ class PersonaForm(forms.ModelForm):
 			'apellidos': 'Apellidos',
 			'edad': 'Edad',
 			'telefono': 'Telefono',
-			'email': 'Correo Electrónico',
+			'email': 'Correo Electronico',
 			'domicilio': 'Domicilio',
 		}
 		widgets ={
@@ -32,7 +32,7 @@ class PersonaForm(forms.ModelForm):
 			'domicilio': forms.Textarea(attrs={'class':'form-control'}),
 		}
 
-class PersonaForm(forms.ModelForm):
+class SolicitudForm(forms.ModelForm):
 
 	class Meta:
 		model = Solicitud

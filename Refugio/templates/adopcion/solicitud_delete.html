@@ -2,16 +2,16 @@
 {% load staticfiles %}
 
 {% block tittle %} 
-	Mascota Eliminar
+	Eliminar Solicitud
 {% endblock %}
 
 
 {% block content %} 
 <form method='post'>
 	{% csrf_token %}
-	<h3>¿Desea eliminar el registro de {{ object.nombre }}?</h3>
+	<h3>¿Desea eliminar la solicitud de {{ object.persona.nombre }} {{ object.persona.apellidos }}?</h3>
 	<!-- {{ form.nombre }}-->
 	<button class="btn btn-danger" type="submit">Sí, eliminar</button>
-	<a class="btn btn-primary" href="{% url 'mascota:mascota_listar' %}">Cancelar</a>
+	<a class="btn btn-primary" href="{% url 'adopcion:solicitud_listar' %}">Cancelar</a>
 </form>	
 {% endblock %}
