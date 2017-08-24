@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'usuario.apps.UsuarioConfig',
     'adopcion.apps.AdopcionConfig',
     'mascota.apps.MascotaConfig',
@@ -126,10 +127,24 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 LOGIN_REDIRECT_URL = reverse_lazy('adopcion:solicitud_listar')
+LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
 EMAIL_USE_TLS = True
-EMAIL_HOTS ='smtp.gmail.com'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = 'carlos.django.caas@gmail.com'
+#EMAIL_HOTS ='smtp-relay.gmail.com'
+EMAIL_HOTS ='smtp.zoho.eu'
+#EMAIL_PORT = 25
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'carlos_caas@zoho.eu'
+#EMAIL_HOST_USER = 'carlos.django.caas@gmail.com'
+EMAIL_HOST_USER = 'carlos_caas@zoho.eu'
 EMAIL_HOST_PASSWORD = 'alexia89.05'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+"""EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'albertisfu'
+EMAIL_HOST_PASSWORD = 'qG2+}FyO^ok('
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'contacto@mailfromthesky.com'"""

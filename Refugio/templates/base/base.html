@@ -39,11 +39,11 @@
 							<!--**********************-->
 							<ul class="nav navbar-nav">
 								<li class="dropdown">
-									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Mascotas<span class="caret"></span>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Mascotas<span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">Registrar</a></li>
-										<li><a href="#">Listar Mascota</a></li>
+										<li><a href="{% url 'mascota:mascota_crear' %}">Registrar</a></li>
+										<li><a href="{% url 'mascota:mascota_listar' %}">Listar Mascota</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -53,11 +53,11 @@
 							<!--**********************-->
 							<ul class="nav navbar-nav">
 								<li class="dropdown">
-									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Adopciones<span class="caret"></span>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Adopciones<span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Solicitar</a></li>
-										<li><a href="#">Listar Solicitudes</a></li>
+										<li><a href="{% url 'adopcion:solicitud_crear' %}">Solicitar</a></li>
+										<li><a href="{% url 'adopcion:solicitud_listar' %}">Listar Solicitudes</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -74,7 +74,7 @@
 									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Opciones<span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Salir</a></li>
+										<li><a href="{% url 'logout' %}">Salir</a></li>
 									</ul>
 								</li>
 							</ul>

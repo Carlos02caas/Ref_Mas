@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.core import serializers
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
@@ -10,6 +11,10 @@ from mascota.forms import MascotaForm
 from mascota.models import Mascota
 
 # Create your views here.
+
+def listado(request):
+	lista = serializers.serialize('json', Mascota.objects.all(), fields=['nombre','sexo','edad_aproximada'])
+	return HttpResponse(lista, content_type='application/json')
 
 def index_mascota(request):
 	#return HttpResponse("Index de Mascota")
@@ -71,6 +76,7 @@ def index_mascota(request):
 class MascotaList(ListView):
 	model = Mascota
 	template_name = 'mascota/mascota_list.html'
+	paginate_by = 3
 
 #****************************************
 #*****Vistas  Basadas en Classes*******

@@ -37,4 +37,19 @@
 		{% endif %}
 	</tbody>
 </table>
+
+<div class="col-md-4 col-md-offset-4">
+		<ul class="pager">
+			<li class="previous">
+				{% if page_obj.has_previous %}
+				<a href="?page={{ page_obj.previous_page_number }}">&larr; Anterior</a>
+				{% endif %}
+			</li>
+			<li class="next">
+				{% if page_obj.has_next %}
+				<a href="?page={{ page_obj.next_page_number }}">Siguiente &rarr; </a>
+				{% endif %}
+			</li>
+		</ul>
+</div>
 {% endblock %}
